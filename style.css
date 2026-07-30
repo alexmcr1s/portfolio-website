@@ -4,7 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .navbar {
@@ -30,10 +30,9 @@
   padding: 0 50px;
 }
 
-/*  more advanced to use image, this is a hard coding of a logo */
 #navbar__logo {
-  background-color: #ff8177;
-  background-image: linear-gradient(to top, #089cff 0%, #7119ff 100%);
+  background-color: #7119ff;
+  background-image: linear-gradient(to top, #efeff3 0%, #7119ff 100%);
   background-size: 100%;
   background-clip: border-box;
   -webkit-background-clip: text;
@@ -42,13 +41,13 @@
   -moz-text-fill-color: transparent;
   display: flex;
   align-items: center;
-  gap: 12px;
   cursor: pointer;
   text-decoration: none;
   font-size: 2rem;
+  gap: 12px;
 }
 
-.fa-gem {
+.fa-satellite-dish {
   margin-right: flex;
 }
 
@@ -83,7 +82,7 @@
 }
 
 /* contact me button */
-.button {
+.contact__btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -94,21 +93,24 @@
   border: none;
   outline: none;
   border-radius: 4px;
-  background: #351ba7;
+  background: #4ea11e;
+  background-image: linear-gradient(to top, #4ea11e 0%, #84b195 100%);
   color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
-/* lighten affect when hovering */
-.button:hover {
-  background: #4837ff;
+.contact__btn:hover {
+  background: #7119ff;
   transition: all 0.3s ease;
 }
 
 .navbar__links:hover {
-  color: #f77062;
+  color: #7119ff;
   transition: all 0.3s ease;
 }
 
+/* Mobile Menu Appearance */
 @media screen and (max-width: 960px) {
   .navbar__container {
     display: flex;
@@ -180,13 +182,14 @@
     padding-bottom: 2rem;
   }
 
-  .button {
+  .contact__btn {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 80%;
     height: 80px;
     margin: 0;
+    font-size: 1.6rem;
   }
 
   .navbar__toggle .bar {
@@ -205,4 +208,151 @@
   #mobile-menu.is-active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
+}
+
+/* Hero Section */
+.main {
+  background-color: #141414;
+}
+
+.main__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-self: center;
+  margin: 0 auto;
+  height: 90vh;
+  background-color: #141414;
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 50px;
+}
+
+.main__content h1 {
+  font-size: 4rem;
+  background-color: #7119ff;
+  background-image: linear-gradient(to top, #976ae0 0%, #1ed145 100%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  line-height: 1.1;
+}
+
+.main__content p {
+  margin-top: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  background-color: #7119ff;
+  background-image: linear-gradient(to top, #a290c0 0%, #9c99a0 100%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+/* Hero button */
+.main__btn {
+  font-size: 1rem;
+  background-image: linear-gradient(to top, #1a972e 0%, #84b195 100%);
+  padding: 14px 32px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  margin-top: 1rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.35s;
+  outline: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 2;
+  text-decoration: none;
+}
+
+.main__btn:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #7119ff;
+  transition: all 0.35s;
+  border-radius: 4px;
+}
+
+/* Layer management for hero button hover */
+.main__btn::after {
+  z-index: -1;
+}
+
+.main__btn:hover {
+  color: #fff;
+}
+
+.main__btn:hover:after {
+  width: 100%;
+}
+
+.main__img--container {
+  text-align: center;
+}
+
+#main__img {
+  height: 80%;
+  width: 80%;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  .main__container {
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    justify-self: center;
+    width: 100%;
+    margin: 0 auto;
+    height: 90vh;
+  }
+
+  .main__content {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .main__content h1 {
+    font-size: 2.5rem;
+    margin-top: 2rem;
+  }
+
+  .main__content p {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .main__content button {
+    justify-self: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main__content h1 {
+    font-size: 2rem;
+    margin-top: 3rem;
+  }
+
+  .main__content p {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .main__content button {
+    justify-self: center;
+  }
+
 }
